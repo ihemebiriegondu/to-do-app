@@ -1,0 +1,60 @@
+.intro-page {
+    position: absolute;
+    overflow-x: hidden;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+}
+
+.intro-page::-webkit-scrollbar {
+    display: none !important;
+  }
+
+.intro-page .logo-intro {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    animation-name: logoSize, logoMove;
+    animation-duration: 1s, 2s;
+    animation-delay: 0.1s, 3.1s;
+    animation-iteration-count: 3, 1;
+}
+
+@keyframes logoSize {
+    from {
+        transition: trasform 1s;
+        transform: scale(0.85);
+        height: 100%;
+    }
+
+    to {
+        transition: transform 2s;
+        transform: scale(1.05);
+        height: 100%;
+    }
+}
+
+@keyframes logoMove {
+    from {
+        height: 100%;
+    }
+
+    to {
+        height: 30%;
+    }
+}
+
+.intro-page .logo-intro div {
+    /*width: 70%*/
+    height: 100%;
+}
+
+.intro-page .logo-intro div img {
+    object-fit: contain;
+}
