@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+
+
 .intro-page {
     position: absolute;
     overflow-x: hidden;
@@ -12,18 +16,19 @@
 
 .intro-page::-webkit-scrollbar {
     display: none !important;
-  }
+}
 
 .intro-page .logo-intro {
     position: absolute;
     top: 0;
     bottom: 0;
     width: 100%;
-    height: 30%;
+    height: 25%;
+    transform: scale(0.7);
     animation-name: logoSize, logoMove;
-    animation-duration: 1s, 2s;
+    animation-duration: 1.5s, 2s;
     animation-delay: 0.1s, 3.1s;
-    animation-iteration-count: 3, 1;
+    animation-iteration-count: 2, 1;
 }
 
 @keyframes logoSize {
@@ -43,18 +48,191 @@
 @keyframes logoMove {
     from {
         height: 100%;
+        transform: scale(1.05);
     }
 
     to {
-        height: 30%;
+        height: 25%;
+        transform: scale(0.7);
     }
 }
 
 .intro-page .logo-intro div {
-    /*width: 70%*/
     height: 100%;
 }
 
 .intro-page .logo-intro div img {
     object-fit: contain;
+}
+
+.intro-page .login-intro {
+    position: absolute;
+    background: #C7C7C7;
+    height: 75%;
+    bottom: 0;
+    z-index: 4;
+    width: 100%;
+    border-radius: 25px 25px 0px 0px;
+    animation-name: showLogin, slideInLogin;
+    animation-delay: 0.1s, 3.1s;
+    animation-duration: 3.1s, 2s;
+    animation-iteration-count: 1;
+    visibility: visible;
+}
+
+@keyframes showLogin {
+    from {
+        visibility: hidden;
+        height: 0;
+    }
+
+    to {
+        visibility: visible;
+        height: 0;
+    }
+}
+
+@keyframes slideInLogin {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 75%;
+    }
+}
+
+.intro-page .login-intro h3 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 32px;
+    text-transform: uppercase;
+    color: #E18519;
+    text-align: center;
+    margin-top: 38px;
+    margin-bottom: 46px;
+}
+
+.intro-page .login-intro form {
+    width: 30%;
+}
+
+.intro-page .login-intro form div {
+    margin-bottom: 40px;
+}
+
+.intro-page .login-intro form label {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 15px;
+    color: #1F2327;
+    margin-bottom: 10px;
+}
+
+.intro-page .login-intro form input {
+    background: #F9F9F9;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    padding: 10px 15px;
+    gap: 10px;
+}
+
+.intro-page .login-intro form p {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    color: #3C3C3C;
+    text-align: end;
+    margin-top: 10px;
+}
+
+.intro-page .login-intro form button {
+    border: none;
+    outline: none;
+    background: #E18519;
+    border-radius: 50px;
+    padding: 15px;
+    width: 100%;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 15px;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+}
+
+.intro-page .login-intro .dash {
+    border: 1px solid rgba(225, 133, 25, 0.46);
+    width: 30%;
+}
+
+.intro-page .login-intro .continue {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+    color: #3C3C3C;
+}
+
+.intro-page .login-intro .no-account {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+    color: #3C3C3C;
+    text-align: center;
+}
+
+.intro-page .login-intro .no-account a {
+    text-decoration: none;
+    color: #E18519;
+}
+
+
+
+@media (max-width: 992px) {
+    .intro-page .login-intro h3 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+
+    .intro-page .login-intro form label {
+        font-size: 14px;
+        line-height: 15px;
+        margin-bottom: 5px;
+    }
+
+    .intro-page .login-intro form input {
+        padding: 10px;
+    }
+
+    .intro-page .login-intro form p {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .intro-page .login-intro form button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .intro-page .login-intro .continue {
+        font-size: 14px;
+    }
+
+    .intro-page .login-intro .no-account {
+        font-size: 14px;
+    }
 }
