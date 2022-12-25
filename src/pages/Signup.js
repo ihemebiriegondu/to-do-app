@@ -1,13 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import logo from '../assests/Logo Shapes 15.png'
-import '../css/intro.css'
-import { FcGoogle } from 'react-icons/fc';
-import { RiFacebookCircleFill } from 'react-icons/ri'
+import '../css/signup.css'
 
-const Intro = () => {
+const Signup = () => {
     return (
-        <div className='intro-page'>
+        <div className='intro-page signup'>
             <div className='logo-intro'>
                 <div className='d-flex align-items-center justify-content-center mx-auto'>
                     <img src={logo} alt="" className='m-auto'></img>
@@ -26,18 +24,8 @@ const Intro = () => {
                             <input id='password' name='password' type='password' placeholder='*******'></input>
                             <p>Forgotten Password ?</p>
                         </div>
-                        <button>Log in</button>
-
-                        <div className='d-flex justify-content-between align-items-baseline mb-3'>
-                            <div className='dash mb-0'></div>
-                            <p className='continue'>Or continue with</p>
-                            <div className='dash mb-0'></div>
-                        </div>
-                        <div className='d-flex justify-content-center align-items-center mb-3'>
-                            <FcGoogle className='me-3 fs-3' />
-                            <RiFacebookCircleFill className='ms-3 fs-3 text-primary' />
-                        </div>
-                        <p className='no-account mb-5'>Don’t have an Account? <Link to="/signup">Sign Up</Link></p>
+                        <button>Sign Up</button>
+                        <p className='no-account mb-5'>Already have an Account ? <Link to="/">Login</Link></p>
                     </form>
                 </div>
             </div>
@@ -45,4 +33,4 @@ const Intro = () => {
     )
 }
 
-export default Intro
+export default Signup

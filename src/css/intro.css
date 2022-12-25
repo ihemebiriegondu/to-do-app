@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
 
 
+body,
+#root {
+    height: fit-content !important;
+}
+
 .intro-page {
     position: absolute;
     overflow-x: hidden;
@@ -9,9 +14,22 @@
     bottom: 0;
     width: 100%;
     z-index: 1;
-
     -ms-overflow-style: none !important;
     scrollbar-width: none !important;
+    overflow-y: scroll;
+    animation-name: overflow;
+    animation-duration: 10s;
+    height: 100%;
+}
+
+@keyframes overflow {
+    from {
+        overflow-y: hidden;
+    }
+
+    to {
+        overflow-y: scroll;
+    }
 }
 
 .intro-page::-webkit-scrollbar {
@@ -73,22 +91,25 @@
     z-index: 4;
     width: 100%;
     border-radius: 25px 25px 0px 0px;
+    visibility: visible;
+    display: block !important;
     animation-name: showLogin, slideInLogin;
     animation-delay: 0.1s, 3.1s;
     animation-duration: 3.1s, 2s;
     animation-iteration-count: 1;
-    visibility: visible;
 }
 
 @keyframes showLogin {
     from {
         visibility: hidden;
         height: 0;
+        display: none !important;
     }
 
     to {
         visibility: visible;
         height: 0;
+        display: block !important;
     }
 }
 
@@ -100,6 +121,10 @@
     to {
         height: 75%;
     }
+}
+
+.intro-page .login-intro .login-intro-div {
+    background: #C7C7C7;
 }
 
 .intro-page .login-intro h3 {
@@ -202,7 +227,18 @@
 
 
 
+@media (max-width: 1200px) {
+    .intro-page .login-intro form {
+        width: 50%;
+    }
+}
+
 @media (max-width: 992px) {
+    .intro-page .logo-intro div img {
+        width: 124.61px;
+        height: 84px;
+    }
+
     .intro-page .login-intro h3 {
         font-size: 32px;
         line-height: 32px;
@@ -216,6 +252,10 @@
 
     .intro-page .login-intro form input {
         padding: 10px;
+    }
+
+    .intro-page .login-intro form {
+        width: 70%;
     }
 
     .intro-page .login-intro form p {
@@ -234,5 +274,57 @@
 
     .intro-page .login-intro .no-account {
         font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-page .logo-intro {
+        height: 15%;
+    }
+    
+    @keyframes logoMove {
+        from {
+            height: 100%;
+        }
+    
+        to {
+            height: 15%;
+        }
+    }
+
+    .intro-page .login-intro {
+        height: 85%;
+    }
+    
+    @keyframes slideInLogin {
+        from {
+            height: 0;
+        }
+    
+        to {
+            height: 85%;
+        }
+    }
+
+    .intro-page .logo-intro div img {
+        width: 64.61px;
+        height: 44px;
+    }
+
+    .intro-page .login-intro h3 {
+        font-size: 28px;
+        line-height: 28px;
+    }
+
+    .intro-page .login-intro form {
+        width: 100%;
+        padding: 0 24px;
+    }
+}
+
+@media (max-width: 380px) {
+    .intro-page .login-intro .dash {
+        border: 1px solid rgba(225, 133, 25, 0.46);
+        width: 25%;
     }
 }
