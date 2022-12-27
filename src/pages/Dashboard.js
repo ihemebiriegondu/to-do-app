@@ -37,6 +37,9 @@ function Dashboard() {
             <input type="text" className='flex-grow-1' />
             <ImEqualizer className='search-tools' />
           </div>
+          <div className='categories'>
+            <h3>Categories</h3>
+          </div>
         </div>
       </div>
     </div>
