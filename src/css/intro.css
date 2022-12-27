@@ -178,6 +178,10 @@ body,
     margin-top: 10px;
 }
 
+.intro-page .login-intro form .forgotten:hover {
+    cursor: pointer;
+}
+
 .intro-page .login-intro form button {
     border: none;
     outline: none;

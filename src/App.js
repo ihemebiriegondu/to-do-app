@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './components/ProtectedRoute'
 
 import { UserAuthContextProvider } from "./context/UserAuthContext";
+import ForgottenPassword from './pages/ForgottenPassword';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/' element={<Intro />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/dashboard' element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path='/forgotten password' element={<ForgottenPassword />} />
         </Routes>
       </UserAuthContextProvider>
     </Router>

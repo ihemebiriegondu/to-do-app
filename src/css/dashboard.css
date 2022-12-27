@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital@0;1&display=swap');
+@import url('https://fonts.cdnfonts.com/css/segoe-ui-4');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+
+.dashboard .dashboard-div {}
+
+.dashboard .dashboard-div .top-section {
+    padding: 27px 32px;
+}
+
+/*background: linear-gradient(#b4d1f5, #fff7045d 80%);*/
+
+.dashboard .dashboard-div .top-section.morning {
+    background: linear-gradient(#b4d1f5, #d7e8fd 80%);
+}
+
+.dashboard .dashboard-div .top-section.afternoon {
+    background: linear-gradient(#fff704c5, #fff70471 80%);
+}
+
+.dashboard .dashboard-div .top-section.evening {
+    background: linear-gradient(#0c1445, #1b2986 80%);
+}
+
+.dashboard .dashboard-div .top-section .top-nav h4 {
+    font-family: 'Exo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22.8923px;
+    line-height: 31px;
+    letter-spacing: -0.286154px;
+    color: black;
+    text-transform: capitalize;
+}
+
+.dashboard .dashboard-div .top-section.evening .top-nav h4 {
+    color: white;
+}
+
+.dashboard .dashboard-div .top-section .top-nav h5 {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28.3429px;
+    line-height: 32px;
+    letter-spacing: -0.265714px;
+    color: black;
+    text-shadow: 0px 0.885714px 7.08571px rgba(white, 0.2);
+}
+
+.dashboard .dashboard-div .top-section.evening .top-nav h5 {
+    color: white;
+}
+
+.dashboard .dashboard-div .top-section .top-nav p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #7D89B0;
+}
+
+.dashboard .dashboard-div .top-section .top-nav img {
+    width: 57px;
+    height: 57px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 10px;
+}
+
+.dashboard .dashboard-div .top-section .search {
+    width: 100%;
+    margin-top: 34px;
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid #E18519 !important;
+    box-shadow: 0px 4px 4px rgba(#E18519, 0.25);
+    border-radius: 12px;
+    padding: 11px 20px;
+}
+
+.dashboard .dashboard-div .top-section .search input {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    outline: none !important;
+    margin: 0 15px;
+    border: none !important;
+    background: transparent !important;
+}
+
+.dashboard .dashboard-div .top-section .search .search-tools {
+    width: 24px;
+    height: 24px;
+    color: #A9A9B0 !important;
+}
+
+
+
+@media (max-width: 768px) {
+    .dashboard .dashboard-div .top-section .top-nav p {
+        font-size: 14px;
+    }
+
+    .dashboard .dashboard-div .top-section .top-nav img {
+        width: 57px;
+        height: 57px;
+    }
+
+    .dashboard .dashboard-div .top-section .search input {
+        font-size: 14px;
+    }
+}

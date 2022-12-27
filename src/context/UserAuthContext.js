@@ -9,7 +9,7 @@ import {
     confirmPasswordReset,
     GoogleAuthProvider,
     signInWithPopup,
-    FacebookAuthProvider
+    FacebookAuthProvider,
 } from "firebase/auth";
 import { auth } from "../firebase";
 
@@ -53,16 +53,6 @@ export function UserAuthContextProvider({ children }) {
     }
 
     function changepassword(oobCode, password) {
-        //const newPassword = getASecureRandomPassword();
-        /*return updatePassword(auth.currentUser, password)
-            .then(() => {
-                console.log(auth.currentUser)
-                // Update successful.
-                
-            }).catch((error) => {
-                // An error ocurred
-                // ...
-            });*/
         return confirmPasswordReset(auth, oobCode, password)
             .then(() => {
 

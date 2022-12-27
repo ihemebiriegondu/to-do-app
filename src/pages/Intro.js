@@ -82,7 +82,7 @@ const Intro = () => {
                         <div className='d-flex flex-column'>
                             <label htmlFor='password'>Password</label>
                             <input id='password' name='password' type='password' placeholder='*******' onChange={(e) => { setPassword(e.target.value) }}></input>
-                            <p>Forgotten Password ?</p>
+                            <p className='forgotten'>Forgotten Password ?</p>
                         </div>
                         <button>Log in</button>
 
