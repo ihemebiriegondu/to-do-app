@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assests/Logo Shapes 15.png'
 import '../css/signup.css'
 import { Alert } from 'react-bootstrap';
+import { FcGoogle } from 'react-icons/fc';
+import { RiFacebookCircleFill } from 'react-icons/ri'
 import { BsFillExclamationCircleFill } from 'react-icons/bs'
 
 import { useUserAuth } from '../context/UserAuthContext';
@@ -13,7 +15,9 @@ const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const { signUp } = useUserAuth
+
+    const { signUp, googleSignIn } = useUserAuth();
+
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -22,7 +26,6 @@ const Signup = () => {
 
         try {
             await signUp(email, name, password);
-
             navigate("/");
         } catch (err) {
             if (name === '') {
@@ -42,6 +45,15 @@ const Signup = () => {
             } else {
                 setError(err.code)
             }
+        }
+    }
+
+    const handleGoogleSignIn = async () => {
+        try {
+            await googleSignIn();
+            navigate("/dashboard");
+        } catch (err) {
+            setError(err.code)
         }
     }
 
@@ -71,10 +83,22 @@ const Signup = () => {
                             <p>Forgotten Password ?</p>
                         </div>
                         <button type='submit'>Sign Up</button>
+
+                        <div className='d-flex justify-content-between align-items-baseline mb-3'>
+                            <div className='dash mb-0'></div>
+                            <p className='continue'>Or continue with</p>
+                            <div className='dash mb-0'></div>
+                        </div>
+                        <div className='d-flex justify-content-center align-items-center mb-3'>
+                            <FcGoogle className='me-3 fs-3 span' onClick={() => { handleGoogleSignIn() }} />
+                            <RiFacebookCircleFill className='ms-3 fs-3 text-primary span' />
+                        </div>
                         <p className='no-account mb-5'>Already have an Account ? <Link to="/">Login</Link></p>
-                        {error && <Alert variant='danger' className='error'><BsFillExclamationCircleFill className='text-danger me-4 fs-4' />{error}</Alert>}
                     </form>
                 </div>
+            </div>
+            <div className='error-div'>
+                {error && <Alert variant='danger' className='error'><BsFillExclamationCircleFill className='text-danger me-4 fs-4' />{error}</Alert>}
             </div>
         </div>
     )

@@ -210,6 +210,10 @@ body,
     color: #3C3C3C;
 }
 
+.intro-page .login-intro .span:hover {
+    cursor: pointer;
+}
+
 .intro-page .login-intro .no-account {
     font-family: 'Rubik';
     font-style: normal;
@@ -223,6 +227,18 @@ body,
 .intro-page .login-intro .no-account a {
     text-decoration: none;
     color: #E18519;
+}
+
+.intro-page .error-div {
+    position: absolute;
+    width: auto !important;
+    right: 20px !important;
+    top: 20px !important;
+}
+
+.intro-page .error-div .alert.alert-danger {
+    width: 100% !important;
+    margin-bottom: 0 !important;
 }
 
 

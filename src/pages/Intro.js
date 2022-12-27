@@ -15,8 +15,7 @@ const Intro = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const { logIn } = useUserAuth();
-    const googleSignIn = useUserAuth();
+    const { logIn, googleSignIn } = useUserAuth();
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -49,7 +48,6 @@ const Intro = () => {
 
     const handleGoogleSignIn = async () => {
         try {
-
             await googleSignIn();
             navigate("/dashboard");
         } catch (err) {
@@ -85,13 +83,15 @@ const Intro = () => {
                             <div className='dash mb-0'></div>
                         </div>
                         <div className='d-flex justify-content-center align-items-center mb-3'>
-                            <FcGoogle className='me-3 fs-3' onClick={() => { handleGoogleSignIn() }} />
-                            <RiFacebookCircleFill className='ms-3 fs-3 text-primary' />
+                            <FcGoogle className='me-3 fs-3 span' onClick={() => { handleGoogleSignIn() }} />
+                            <RiFacebookCircleFill className='ms-3 fs-3 text-primary span' />
                         </div>
                         <p className='no-account mb-5'>Don’t have an Account? <Link to="/signup">Sign Up</Link></p>
-                        {error && <Alert variant='danger' className='error'><BsFillExclamationCircleFill className='text-danger me-4 fs-4' />{error}</Alert>}
                     </form>
                 </div>
+            </div>
+            <div className='error-div'>
+                {error && <Alert variant='danger' className='error'><BsFillExclamationCircleFill className='text-danger me-4 fs-4' />{error}</Alert>}
             </div>
         </div>
     )
