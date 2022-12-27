@@ -3,10 +3,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
 
 
-.dashboard .dashboard-div {}
+
+.dashboard{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.dashboard .dashboard-div {
+    width: 100%;
+}
 
 .dashboard .dashboard-div .top-section {
     padding: 27px 32px;
+    width: 100%;
 }
 
 /*background: linear-gradient(#b4d1f5, #fff7045d 80%);*/
@@ -100,6 +109,25 @@
 
 
 @media (max-width: 768px) {
+
+    .dashboard .dashboard-div .top-section {
+        padding: 13px 17px;
+    }
+
+    .dashboard .dashboard-div .top-section .top-nav h4 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .dashboard .dashboard-div .top-section.evening .top-nav h4 {
+        color: white;
+    }
+
+    .dashboard .dashboard-div .top-section .top-nav h5 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
     .dashboard .dashboard-div .top-section .top-nav p {
         font-size: 14px;
     }
@@ -109,7 +137,17 @@
         height: 57px;
     }
 
+    .dashboard .dashboard-div .top-section .search {
+        padding: 11px 10px;
+    }
+
     .dashboard .dashboard-div .top-section .search input {
         font-size: 14px;
+    }
+
+    .dashboard .dashboard-div .top-section .search .search-tools {
+        width: 20px;
+        height: 20px;
+        color: #A9A9B0 !important;
     }
 }

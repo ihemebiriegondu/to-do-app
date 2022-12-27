@@ -28,7 +28,7 @@ function Dashboard() {
             <div className=''>
               <h4>Good {greetings}</h4>
               <h5>{user && user.displayName}</h5>
-              <p>38 tasks today</p>
+              <p className='mb-0'>38 tasks today</p>
             </div>
             <img className='' src={user.photoURL} alt="" />
           </div>
