@@ -9,6 +9,7 @@ import {
     confirmPasswordReset,
     GoogleAuthProvider,
     signInWithPopup,
+    FacebookAuthProvider
 } from "firebase/auth";
 import { auth } from "../firebase";
 
@@ -33,6 +34,11 @@ export function UserAuthContextProvider({ children }) {
 
     function googleSignIn() {
         const provider = new GoogleAuthProvider();
+        return signInWithPopup(auth, provider)
+    }
+
+    function facebookSignIn() {
+        const provider = new FacebookAuthProvider();
         return signInWithPopup(auth, provider)
     }
 
@@ -76,7 +82,7 @@ export function UserAuthContextProvider({ children }) {
 
     return (
         <userAuthContext.Provider
-            value={{ user, logIn, signUp, googleSignIn, logOut, forgetpassword, changepassword }}
+            value={{ user, logIn, signUp, googleSignIn, facebookSignIn, logOut, forgetpassword, changepassword }}
         >
             {children}
         </userAuthContext.Provider>

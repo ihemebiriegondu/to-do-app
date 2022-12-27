@@ -16,7 +16,7 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    const { signUp, googleSignIn } = useUserAuth();
+    const { signUp, googleSignIn, facebookSignIn } = useUserAuth();
 
     const navigate = useNavigate();
 
@@ -57,6 +57,15 @@ const Signup = () => {
         }
     }
 
+    const handleFacebookSignIn = async () => {
+        try {
+            await facebookSignIn();
+            navigate("/dashboard");
+        } catch (err){
+            setError(err.code)
+        }
+    }
+
 
     return (
         <div className='intro-page signup'>
@@ -91,7 +100,7 @@ const Signup = () => {
                         </div>
                         <div className='d-flex justify-content-center align-items-center mb-3'>
                             <FcGoogle className='me-3 fs-3 span' onClick={() => { handleGoogleSignIn() }} />
-                            <RiFacebookCircleFill className='ms-3 fs-3 text-primary span' />
+                            <RiFacebookCircleFill className='ms-3 fs-3 text-primary span' onClick={() => { handleFacebookSignIn() }} />
                         </div>
                         <p className='no-account mb-5'>Already have an Account ? <Link to="/">Login</Link></p>
                     </form>

@@ -15,7 +15,7 @@ const Intro = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const { logIn, googleSignIn } = useUserAuth();
+    const { logIn, googleSignIn, facebookSignIn } = useUserAuth();
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -55,6 +55,15 @@ const Intro = () => {
         }
     }
 
+    const handleFacebookSignIn = async () => {
+        try {
+            await facebookSignIn();
+            navigate("/dashboard");
+        } catch (err){
+            setError(err.code)
+        }
+    }
+
     return (
         <div className='intro-page'>
             <div className='logo-intro'>
@@ -84,7 +93,7 @@ const Intro = () => {
                         </div>
                         <div className='d-flex justify-content-center align-items-center mb-3'>
                             <FcGoogle className='me-3 fs-3 span' onClick={() => { handleGoogleSignIn() }} />
-                            <RiFacebookCircleFill className='ms-3 fs-3 text-primary span' />
+                            <RiFacebookCircleFill className='ms-3 fs-3 text-primary span' onClick={() => { handleFacebookSignIn() }} />
                         </div>
                         <p className='no-account mb-5'>Don’t have an Account? <Link to="/signup">Sign Up</Link></p>
                     </form>
