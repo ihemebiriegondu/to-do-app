@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+
+
+.category-card .card {
+    width: 262px;
+    height: 264px;
+    background: white;
+    box-shadow: 0px 2px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+    border-radius: 24px;
+    padding: 24px 20px;
+}
+
+.categories .category-card:first-of-type .card {
+    background: #E18519;
+}
+
+.category-card .card .category-icon-div {
+    background: #e184194e;
+    border-radius: 50%;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
+.categories .category-card:first-of-type .card .category-icon-div {
+    background: #ab5f09;
+}
+
+.category-card .card .category-icon {
+    width: 36px;
+    height: 36px;
+    color: #E18519;
+    text-align: center;
+}
+
+.categories .category-card:first-of-type .card .category-icon {
+    color: white;
+}
+
+.category-card .card .card-title {
+    margin-top: 16px;
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18.1176px;
+    line-height: 24px;
+    color: #111322;
+}
+
+.categories .category-card:first-of-type .card .card-title {
+    color: #FCFAFF;   
+}
+
+.category-card .card .card-subtitle {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #7D89B0;
+    opacity: 0.7;
+}
+
+.categories .category-card:first-of-type .card .card-subtitle {
+    color: #F2F4F7;
+    opacity: 0.7;
+}
+
+.category-card .card .progress {
+    margin-top: 32px;
+    height: 4px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(225, 133, 25, 0.3);
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+.categories .category-card:first-of-type .card .progress {
+    background-color: rgba(244, 235, 255, 0.3);
+}
+
+.category-card .card .progress .progress-bar {
+    background: #E18519;
+    border-radius: 4px;
+}
+
+.categories .category-card:first-of-type .card .progress .progress-bar {
+    background: white;
+}
+
+.category-card .card p span {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #4A5578;
+}
+
+.categories .category-card:first-of-type .card p span {
+    color: #FFFFFF;
+}
+
+
+
+@media (max-width: 768px) {
+    .category-card .card {
+        width: 252px;
+        height: 254px;
+    }
+
+    .category-card .card .category-icon-div {
+        width: 48px;
+        height: 48px;
+    }
+
+    .category-card .card .category-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .category-card .card .card-title {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        color: #FCFAFF;
+    }
+
+    .category-card .card .card-subtitle {
+        font-size: 12.6471px;
+        line-height: 17px;
+    }
+}

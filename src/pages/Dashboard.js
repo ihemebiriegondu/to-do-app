@@ -1,13 +1,24 @@
 import React from 'react'
 import '../css/dashboard.css'
 import { BiSearchAlt } from "react-icons/bi"
-import { ImEqualizer } from 'react-icons/im'
+import { RiEqualizerLine } from 'react-icons/ri'
+import userIcon from '../assests/user-icon.png'
 import { useUserAuth } from '../context/UserAuthContext';
+import { CategoryCard } from '../components/CategoryCard'
 
 function Dashboard() {
 
   const { user } = useUserAuth();
+  //console.log(user.photoURL)
+  let photoURL = ""
+  if (user.photoURL === null) {
+    photoURL = userIcon
+  } else {
+    photoURL = user.photoURL
+  }
 
+
+  //getting time for changing bg
   var today = new Date()
   var currentHour = today.getHours()
   let greetings = ""
@@ -30,15 +41,22 @@ function Dashboard() {
               <h5>{user && user.displayName}</h5>
               <p className='mb-0'>38 tasks today</p>
             </div>
-            <img className='' src={user.photoURL} alt="" />
+            <img className='' src={photoURL} alt="" />
           </div>
           <div className='search d-flex justify-content-between align-items-center'>
             <BiSearchAlt className='search-tools' />
             <input type="text" className='flex-grow-1' />
-            <ImEqualizer className='search-tools' />
+            <RiEqualizerLine className='search-tools' />
           </div>
           <div className='categories'>
             <h3>Categories</h3>
+            <div>
+              <div className='d-flex'>
+                <CategoryCard />
+                <CategoryCard />
+                <CategoryCard />
+              </div>
+            </div>
           </div>
         </div>
       </div>
