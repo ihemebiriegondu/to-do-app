@@ -1,7 +1,9 @@
 import React from 'react'
 import '../css/dashboard.css'
-import { BiSearchAlt } from "react-icons/bi"
+import { BiSearchAlt, BiBookReader } from "react-icons/bi"
 import { RiEqualizerLine } from 'react-icons/ri'
+import { IoSchoolOutline, IoFastFoodOutline } from 'react-icons/io5'
+import { FaRegGrinBeamSweat } from 'react-icons/fa'
 import userIcon from '../assests/user-icon.png'
 import { useUserAuth } from '../context/UserAuthContext';
 import { CategoryCard } from '../components/CategoryCard'
@@ -31,6 +33,15 @@ function Dashboard() {
     greetings = "evening"
   }
 
+  //categories name
+  const categories = [
+    { categoryIcon: <IoSchoolOutline className='category-icon' />, categoryTitle: "School", categorySubtitle: "4 tasks", categoryProgress: "70%" },
+    { categoryIcon: <BiBookReader className='category-icon' />, categoryTitle: "Reading", categorySubtitle: "1 tasks", categoryProgress: "50%" },
+    { categoryIcon: <FaRegGrinBeamSweat className='category-icon' />, categoryTitle: "Exercise", categorySubtitle: "3 tasks", categoryProgress: "85%" },
+    { categoryIcon: <IoFastFoodOutline className='category-icon' />, categoryTitle: "Food", categorySubtitle: "7 tasks", categoryProgress: "100%" }
+  ]
+
+
   return (
     <div className='dashboard'>
       <div className='dashboard-div'>
@@ -52,11 +63,25 @@ function Dashboard() {
             <h3>Categories</h3>
             <div>
               <div className='d-flex'>
-                <CategoryCard />
-                <CategoryCard />
-                <CategoryCard />
+                {
+                  categories && categories?.map((task) => {
+                    return (
+                      <CategoryCard
+                        categoriesIcon={task?.categoryIcon}
+                        categoriesTitle={task?.categoryTitle}
+                        categoriesSubtitle={task?.categorySubtitle}
+                        categoriesProgress={task?.categoryProgress} />
+                    )
+                  })
+                }
               </div>
             </div>
+          </div>
+        </div>
+        <div className='mid-section'>
+          <div>
+            <h3>My Tasks</h3>
+
           </div>
         </div>
       </div>

@@ -1,26 +1,25 @@
 import React from 'react'
 import "../css/categorycard.css"
-import { IoSchoolOutline } from 'react-icons/io5'
 
 
-export const CategoryCard = () => {
+export const CategoryCard = ({categoriesIcon, categoriesTitle, categoriesSubtitle, categoriesProgress}) => {
   return (
     <div className='category-card'>
       <div className="card">
         <div className="card-body p-0">
           <div>
             <div className='category-icon-div  d-flex justify-content-center align-items-center'>
-              <IoSchoolOutline className='category-icon' />
+              <span>{categoriesIcon}</span>
             </div>
           </div>
-          <h5 className="card-title">School</h5>
-          <h6 className="card-subtitle">3 tasks</h6>
+          <h5 className="card-title">{categoriesTitle}</h5>
+          <h6 className="card-subtitle">{categoriesSubtitle}</h6>
           <div>
             <div className="progress">
-              <div className="progress-bar" role="progressbar" aria-label="Success example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={{ width: "70%" }}></div>
+              <div className="progress-bar" role="progressbar" aria-label="Success example" aria-valuenow={categoriesProgress} aria-valuemin="0" aria-valuemax="100" style={{ width: categoriesProgress }}></div>
             </div>
             <div>
-              <p className='d-flex justify-content-between align-items-center'><span>Progress</span><span>75%</span></p>
+              <p className='d-flex justify-content-between align-items-center'><span>Progress</span><span>{categoriesProgress}</span></p>
             </div>
           </div>
         </div>
