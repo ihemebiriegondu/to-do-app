@@ -47,7 +47,7 @@ const Signup = () => {
             }
         }
     }
-
+ 
     const handleGoogleSignIn = async () => {
         try {
             await googleSignIn();

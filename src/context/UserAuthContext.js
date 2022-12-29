@@ -13,7 +13,18 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebase";
 
+
+//storage imports
+import { storage } from "../firebase";
+import {
+    collection,
+    getDocs
+} from 'firebase/firestore'
+
 const userAuthContext = createContext();
+
+//getting categories titles
+const collections = collection(storage, 'categoryTitles');
 
 export function UserAuthContextProvider({ children }) {
     const [user, setUser] = useState({});
@@ -59,6 +70,17 @@ export function UserAuthContextProvider({ children }) {
             })
     }
 
+    function addCategory() {
+        getDocs(collections)
+            .then((storedData) => {
+                let titles = []
+                storedData.docs.forEach((doc) => {
+                    titles.push({ ...doc.data(), id: doc.id})
+                })
+                console.log(titles)
+            })
+    }
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
             //console.log("Auth", currentuser);
@@ -72,7 +94,7 @@ export function UserAuthContextProvider({ children }) {
 
     return (
         <userAuthContext.Provider
-            value={{ user, logIn, signUp, googleSignIn, facebookSignIn, logOut, forgetpassword, changepassword }}
+            value={{ user, logIn, signUp, googleSignIn, facebookSignIn, logOut, forgetpassword, changepassword, addCategory }}
         >
             {children}
         </userAuthContext.Provider>

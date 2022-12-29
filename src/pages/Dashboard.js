@@ -7,10 +7,15 @@ import { FaRegGrinBeamSweat } from 'react-icons/fa'
 import userIcon from '../assests/user-icon.png'
 import { useUserAuth } from '../context/UserAuthContext';
 import { CategoryCard } from '../components/CategoryCard'
+import AddCategoryModal from '../components/AddCategoryModal'
+
+
 
 function Dashboard() {
 
   const { user } = useUserAuth();
+  const { addCategory } = useUserAuth();
+
   //console.log(user.photoURL)
   let photoURL = ""
   if (user.photoURL === null) {
@@ -32,6 +37,18 @@ function Dashboard() {
   } else {
     greetings = "evening"
   }
+
+  const addCategoryFunction = async () => {
+    try {
+      await addCategory();
+      console.log("dsh")
+    } catch (err) {
+      console.log(err.code)
+    }
+  }
+
+
+
 
   //categories name
   const categories = [
@@ -74,6 +91,7 @@ function Dashboard() {
                     )
                   })
                 }
+                <AddCategoryModal newEvent={addCategoryFunction()} />
               </div>
             </div>
           </div>

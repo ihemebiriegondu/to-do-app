@@ -3,7 +3,7 @@
 
 
 
-.category-card .card {
+.category-card .card, .categories .category-card:last-of-type .card {
     width: 262px;
     height: 264px;
     background: white;
@@ -104,6 +104,12 @@
     color: #FFFFFF;
 }
 
+.categories .category-card .plus {
+    color: #E18519 !important;
+    width: 30px;
+    height: 30px;
+}
+
 
 
 @media (max-width: 768px) {
@@ -128,7 +134,6 @@
         font-weight: 600;
         font-size: 16px;
         line-height: 20px;
-        color: #FCFAFF;
     }
 
     .category-card .card .card-subtitle {
